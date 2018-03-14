@@ -40,7 +40,7 @@ public class MainApp extends MultiDexApplication {
     public static MainApp getApplication() {
         if (theApplication == null)
             initialize();
-        return theApplication;
+        return theApplication;//
     }
 
     public MainFragmentActivity getMainActivity() {
