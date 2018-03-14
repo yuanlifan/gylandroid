@@ -19,7 +19,7 @@
         <TextView
             android:text="企业基本资料包括 《营业执照（正本）》、公司法人的身份证（正/反面）和《银行开户许可证》。请在以下指定位置完成材料的上传，并在完成后点击“提交审核”按钮"
             android:lineSpacingExtra="@dimen/common_measure_6dp"
-            android:textColor="#505050"
+            android:textColor="@color/black2"
             android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -31,28 +31,65 @@
             android:layout_height="@dimen/common_measure_200dp">
 
             <RelativeLayout
+                android:layout_marginLeft="@dimen/common_measure_18dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
 
-                <ImageView
+                <FrameLayout
                     android:layout_centerInParent="true"
-                    android:src="@color/common_color2"
                     android:layout_width="@dimen/common_measure_160dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:src="@color/common_color2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="点击上传《营业执照》"
+                        android:padding="@dimen/common_measure_8dp"
+                        android:lineSpacingExtra="@dimen/common_measure_6dp"
+                        android:textColor="@color/black2"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_marginRight="@dimen/common_measure_18dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
 
-                <ImageView
+                <FrameLayout
                     android:layout_centerInParent="true"
-                    android:src="@color/common_color2"
                     android:layout_width="@dimen/common_measure_160dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:src="@color/common_color2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="点击上传公司法人的身份证（正面）"
+                        android:padding="@dimen/common_measure_8dp"
+                        android:lineSpacingExtra="@dimen/common_measure_6dp"
+                        android:textColor="@color/black2"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
 
             </RelativeLayout>
 
@@ -65,28 +102,66 @@
             android:layout_height="@dimen/common_measure_200dp">
 
             <RelativeLayout
+                android:layout_marginLeft="@dimen/common_measure_18dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
 
-                <ImageView
+                <FrameLayout
                     android:layout_centerInParent="true"
-                    android:src="@color/common_color2"
                     android:layout_width="@dimen/common_measure_160dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:src="@color/common_color2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:padding="@dimen/common_measure_8dp"
+                        android:lineSpacingExtra="@dimen/common_measure_6dp"
+                        android:text="点击上传公司法人的身份证（反面）"
+                        android:textColor="@color/black2"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_marginRight="@dimen/common_measure_18dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
 
-                <ImageView
+                <FrameLayout
                     android:layout_centerInParent="true"
-                    android:src="@color/common_color2"
                     android:layout_width="@dimen/common_measure_160dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:src="@color/common_color2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:text="点击上传公司的银行卡户许可证"
+                        android:padding="@dimen/common_measure_8dp"
+                        android:lineSpacingExtra="@dimen/common_measure_6dp"
+                        android:gravity="center"
+                        android:textColor="@color/black2"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
 
             </RelativeLayout>
 
@@ -103,7 +178,7 @@
         <TextView
             android:layout_marginLeft="@dimen/common_measure_12dp"
             android:layout_marginRight="@dimen/common_measure_6dp"
-            android:layout_marginBottom="@dimen/common_measure_28dp"
+            android:layout_marginBottom="@dimen/common_measure_22dp"
             android:id="@+id/btn_next"
             android:layout_gravity="center_horizontal"
             android:text="上一步"
@@ -112,12 +187,12 @@
             android:background="@drawable/btn_send_selector"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/common_measure_56dp" />
+            android:layout_height="@dimen/common_measure_46dp" />
 
         <TextView
             android:layout_marginLeft="@dimen/common_measure_6dp"
             android:layout_marginRight="@dimen/common_measure_12dp"
-            android:layout_marginBottom="@dimen/common_measure_28dp"
+            android:layout_marginBottom="@dimen/common_measure_22dp"
             android:id="@+id/btn_next"
             android:layout_gravity="center_horizontal"
             android:text="提交审核"
@@ -126,7 +201,7 @@
             android:background="@drawable/btn_send_selector"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/common_measure_56dp" />
+            android:layout_height="@dimen/common_measure_46dp" />
 
     </LinearLayout>
 
