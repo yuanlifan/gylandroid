@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/defult_bg_color"
+            android:scrollbars="none"
+            android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!-- banner -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_measure_220dp" >
+
+            <com.youth.banner.Banner
+                android:id="@+id/first_page_fragment_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_254dp"
+                app:indicator_drawable_selected="@drawable/style_circle_white"
+                app:indicator_drawable_unselected="@drawable/style_circle_gray_trans"
+                app:indicator_height="8dp"
+                app:indicator_margin="4dp"
+                app:indicator_width="8dp"/>
+
+            <ImageView
+                android:id="@+id/first_page_fragment_default_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/banner1"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_550dp"
+                android:layout_marginBottom="@dimen/common_measure_10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/firstpage_img1"/>
+
+                <Button
+                    android:id="@+id/first_page_fragment_btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_measure_80dp"
+                    android:layout_marginLeft="@dimen/common_measure_20dp"
+                    android:layout_marginRight="@dimen/common_measure_20dp"
+                    android:layout_marginBottom="@dimen/common_measure_20dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/long_golden_btn_selector"
+                    android:text="立即申请"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/common_measure_24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_800dp"
+                android:layout_marginBottom="@dimen/common_measure_10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/firstpage_img2"/>
+
+                <Button
+                    android:id="@+id/first_page_fragment_btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_measure_80dp"
+                    android:layout_marginLeft="@dimen/common_measure_20dp"
+                    android:layout_marginRight="@dimen/common_measure_20dp"
+                    android:layout_marginBottom="@dimen/common_measure_20dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/long_golden_btn_selector"
+                    android:enabled="false"
+                    android:text="敬请期待"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/common_measure_24dp"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_420dp"
+                android:layout_marginBottom="@dimen/common_measure_10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/firstpage_img3"/>
+
+                <Button
+                    android:id="@+id/first_page_fragment_btn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_measure_80dp"
+                    android:layout_marginLeft="@dimen/common_measure_20dp"
+                    android:layout_marginRight="@dimen/common_measure_20dp"
+                    android:layout_marginBottom="@dimen/common_measure_20dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/long_golden_btn_selector"
+                    android:enabled="false"
+                    android:text="敬请期待"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/common_measure_24dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

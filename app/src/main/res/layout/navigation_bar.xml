@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="horizontal" >
+
+    <com.example.admin.gyl.view.BottomSingleView
+        android:id="@+id/nav_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        toolbar:alphaP="true"
+        toolbar:normalBitmap="@drawable/nav_first_page_unselect"
+        toolbar:pitchBitmap="@drawable/nav_first_page_select"
+        toolbar:text="首页"
+        toolbar:textColorP="@color/gray3" />
+
+    <com.example.admin.gyl.view.BottomSingleView
+        android:id="@+id/nav_two"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        toolbar:normalBitmap="@drawable/nav_user_unselect"
+        toolbar:pitchBitmap="@drawable/nav_user_select"
+        toolbar:text="我的"
+        toolbar:textColorP="@color/gray3" />
+
+</merge>

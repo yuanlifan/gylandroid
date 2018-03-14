@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@color/defult_bg_color">
+
+    <include layout="@layout/common_topbar"/>
+
+    <LinearLayout
+        android:id="@+id/setting_activity_sjrz_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_measure_75dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/common_measure_30dp"
+        android:paddingRight="@dimen/common_measure_20dp" >
+
+        <ImageView
+            android:layout_width="@dimen/common_measure_26dp"
+            android:layout_height="@dimen/common_measure_26dp"
+            android:layout_marginRight="@dimen/common_measure_20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting_phone_img" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="手机认证"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/common_measure_20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/arrow_right_img"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_measure_1dp"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:id="@+id/setting_activity_qysfrz_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_measure_75dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/common_measure_30dp"
+        android:paddingRight="@dimen/common_measure_20dp" >
+
+        <ImageView
+            android:layout_width="@dimen/common_measure_26dp"
+            android:layout_height="@dimen/common_measure_26dp"
+            android:layout_marginRight="@dimen/common_measure_20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting_shenfen_img" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="企业身份验证"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/common_measure_20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/arrow_right_img"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_measure_1dp"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:id="@+id/setting_activity_xgdlmm_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_measure_75dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/common_measure_30dp"
+        android:paddingRight="@dimen/common_measure_20dp" >
+
+        <ImageView
+            android:layout_width="@dimen/common_measure_26dp"
+            android:layout_height="@dimen/common_measure_26dp"
+            android:layout_marginRight="@dimen/common_measure_20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/setting_password_img" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="修改登录密码"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/common_measure_20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/arrow_right_img"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/common_measure_1dp"
+        android:background="@color/line_color" />
+
+</LinearLayout>

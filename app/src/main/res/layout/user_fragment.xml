@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@color/defult_bg_color">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_measure_67dp"
+        android:gravity="center"
+        android:text="个人中心"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_measure_24dp"
+        android:background="@drawable/user_fragtitle_bg"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_235dp"
+                android:background="@drawable/user_fragtop_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_fragment_username_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_measure_30dp"
+                    android:gravity="center_horizontal"
+                    android:text="欢迎！账户名"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/common_measure_26dp"/>
+
+                <!--申请借款-->
+                <Button
+                    android:id="@+id/user_fragment_sqjk_btn"
+                    android:layout_width="@dimen/common_measure_280dp"
+                    android:layout_height="@dimen/common_measure_84dp"
+                    android:layout_marginBottom="@dimen/common_measure_30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/user_frag_sqjk_btn"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/user_fragment_zhzl_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_75dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/common_measure_30dp"
+                android:paddingRight="@dimen/common_measure_20dp" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="账户总览"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/common_measure_20dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/arrow_right_img"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/user_fragment_line1"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_1dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/user_fragment_jbsz_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_75dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/common_measure_30dp"
+                android:paddingRight="@dimen/common_measure_20dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="基本设置"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/common_measure_20dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/arrow_right_img"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/user_fragment_line2"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_1dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/user_fragment_dqgl_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_75dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/common_measure_30dp"
+                android:paddingRight="@dimen/common_measure_20dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="贷前管理"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/common_measure_20dp" />
+
+                <ImageView
+                    android:id="@+id/user_fragment_dqgl_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/arrow_right_img"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/user_fragment_line3"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_1dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/user_fragment_dqgl_hiden_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_100dp"
+                android:background="@color/golden1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/user_fragment_jkgl_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_measure_30dp"
+                    android:paddingRight="@dimen/common_measure_20dp" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="借款管理"
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/common_measure_18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/arrow_right_img"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/common_measure_1dp"
+                    android:layout_marginLeft="@dimen/common_measure_15dp"
+                    android:layout_marginRight="@dimen/common_measure_15dp"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:id="@+id/user_fragment_xjjksq_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_measure_30dp"
+                    android:paddingRight="@dimen/common_measure_20dp" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="新建借款申请"
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/common_measure_18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/arrow_right_img"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/common_measure_1dp"
+                    android:background="@color/line_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_fragment_dhgl_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_75dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/common_measure_30dp"
+                android:paddingRight="@dimen/common_measure_20dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="贷后管理"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/common_measure_20dp" />
+
+                <ImageView
+                    android:id="@+id/user_fragment_dhgl_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/arrow_right_img"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/user_fragment_line4"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_measure_1dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/user_fragment_dhgl_hiden_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_100dp"
+                android:layout_marginBottom="@dimen/common_measure_10dp"
+                android:background="@color/golden1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/user_fragment_yfkwjqdjk_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_measure_30dp"
+                    android:paddingRight="@dimen/common_measure_20dp" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="已放款未结清的借款"
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/common_measure_18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/arrow_right_img"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/common_measure_1dp"
+                    android:layout_marginLeft="@dimen/common_measure_15dp"
+                    android:layout_marginRight="@dimen/common_measure_15dp"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:id="@+id/user_fragment_yjqdjk_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/common_measure_30dp"
+                    android:paddingRight="@dimen/common_measure_20dp" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="已结清的借款"
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/common_measure_18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/arrow_right_img"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/common_measure_1dp"
+                    android:background="@color/line_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
