@@ -12,8 +12,7 @@ import android.widget.TextView;
 import com.example.admin.gyl.base.BaseActivity;
 import com.example.admin.gyl.home.MainFragmentActivity;
 import com.example.admin.gyl.http.MyCallBack;
-import com.example.admin.gyl.http.model.BaseModel;
-import com.example.admin.gyl.http.model.UserModel;
+import com.example.admin.gyl.http.model.LoginModel;
 import com.example.admin.gyl.utils.SettingManager;
 import com.example.admin.gyl.utils.Util;
 import com.ylfcf.gyl.R;
@@ -104,23 +103,23 @@ public class LoginActivity extends BaseActivity {
         if(mLoadingDialog != null){
             mLoadingDialog.show();
         }
-        netHandler.RequestLogin(mobile, password, new MyCallBack<BaseModel>() {
+        netHandler.RequestLogin(mobile, password, new MyCallBack<LoginModel>() {
             @Override
             public void onFailure(Call call, IOException e) {
                 Util.toastShort(LoginActivity.this,"登录失败");
             }
 
             @Override
-            public void onSuccess(Call call, BaseModel baseInfo) {
+            public void onSuccess(Call call, LoginModel baseInfo) {
                 if(mLoadingDialog != null && mLoadingDialog.isShowing()){
                     mLoadingDialog.dismiss();
                 }
                 if(baseInfo != null){
                     int resultCode = SettingManager.getResultCode(baseInfo);
-                    UserModel userInfo = baseInfo.getmUserModel();
+//                    UserModel userInfo = baseInfo.getmUserModel();
                     if(resultCode == 0){
                         Util.toastLong(LoginActivity.this,"登录成功");
-                        SettingManager.setUserId(LoginActivity.this,userInfo.getId());
+                        SettingManager.setUserId(LoginActivity.this,baseInfo.getMsg().getId());
                         Intent intent = new Intent();
                         setResult(MainFragmentActivity.RESULTCODE_LOGIN,intent);
                         finish();

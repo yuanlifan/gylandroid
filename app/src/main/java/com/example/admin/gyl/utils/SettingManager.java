@@ -3,6 +3,7 @@ package com.example.admin.gyl.utils;
 import android.content.Context;
 
 import com.example.admin.gyl.http.model.BaseModel;
+import com.example.admin.gyl.http.model.LoginModel;
 
 /**
  * Created by Administrator on 2018/2/6.
@@ -54,6 +55,15 @@ public class SettingManager extends DefaultPreferences {
         int resultCode = -1;
         try {
             resultCode = Integer.parseInt(baseInfo.getError_id());
+        } catch (Exception e) {
+        }
+        return resultCode;
+    }
+
+    public static int getResultCode(LoginModel baseInfo){
+        int resultCode = -1;
+        try {
+            resultCode = baseInfo.getError_id();
         } catch (Exception e) {
         }
         return resultCode;
