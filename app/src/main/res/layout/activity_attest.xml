@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/defult_bg_color">
+
+    <include layout="@layout/common_topbar"/>
+
+    <EditText
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/common_measure_8dp"
+        android:id="@+id/et_company_id"
+        android:hint="请完整填写企业的名称"
+        android:paddingLeft="@dimen/common_measure_26dp"
+        android:textColorHint="@color/edittext_hint_color"
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_height="@dimen/common_measure_56dp" />
+
+
+    <EditText
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/common_measure_1dp"
+        android:id="@+id/et_company_name"
+        android:textColor="@color/black"
+        android:hint="请完整填写企业法人的名字"
+        android:textColorHint="@color/edittext_hint_color"
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:paddingLeft="@dimen/common_measure_26dp"
+        android:layout_height="@dimen/common_measure_56dp" />
+
+    <EditText
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/edittext_hint_color"
+        android:layout_marginTop="@dimen/common_measure_1dp"
+        android:id="@+id/et_company_number1"
+        android:textSize="14sp"
+        android:hint="请完整填写企业的营业执照号"
+        android:paddingLeft="@dimen/common_measure_26dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_measure_56dp" />
+
+    <EditText
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/edittext_hint_color"
+        android:layout_marginTop="@dimen/common_measure_1dp"
+        android:id="@+id/et_company_number2"
+        android:hint="请完整填写企业的开户许可证号"
+        android:paddingLeft="@dimen/common_measure_26dp"
+        android:layout_width="match_parent"
+        android:textSize="14sp"
+        android:layout_height="@dimen/common_measure_56dp" />
+
+    <EditText
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/edittext_hint_color"
+        android:layout_marginTop="@dimen/common_measure_1dp"
+        android:id="@+id/et_bank_name"
+        android:paddingLeft="@dimen/common_measure_26dp"
+        android:hint="请完整填写收款银行"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_measure_56dp" />
+
+    <EditText
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textColorHint="@color/edittext_hint_color"
+        android:layout_marginTop="@dimen/common_measure_1dp"
+        android:id="@+id/et_company_number3"
+        android:textSize="14sp"
+        android:hint="请完整填写企业的机构信用代码（选填）"
+        android:paddingLeft="@dimen/common_measure_26dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_measure_56dp" />
+
+    <TextView
+        android:layout_marginTop="@dimen/common_measure_46dp"
+        android:layout_marginLeft="@dimen/common_measure_12dp"
+        android:layout_marginRight="@dimen/common_measure_12dp"
+        android:id="@+id/btn_next"
+        android:text="下一步"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_send_selector"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_measure_46dp" />
+
+
+
+</LinearLayout>

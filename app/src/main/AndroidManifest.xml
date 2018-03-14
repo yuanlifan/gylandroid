@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ylfcf.gyl">
 
@@ -23,44 +24,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name="com.example.admin.gyl.login.SplashActivity"
             android:launchMode="singleTask"
-            android:theme="@style/Theme.AppMainStartLoad"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMainStartLoad">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.example.admin.gyl.home.MainFragmentActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppStartLoad"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
         <activity
             android:name="com.example.admin.gyl.login.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AnimActivityTheme" />
-
         <activity
             android:name="com.example.admin.gyl.login.RegistActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AnimActivityTheme" />
-
         <activity
             android:name="com.example.admin.gyl.login.ForgetPwdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AnimActivityTheme" />
-
         <activity
             android:name="com.example.admin.gyl.personcenter.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AnimActivityTheme" />
-
+        <activity
+            android:name="com.example.admin.gyl.personcenter.AttestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AnimActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity android:name="com.example.admin.gyl.personcenter.CompanyPhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AnimActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
     </application>
+
 </manifest>

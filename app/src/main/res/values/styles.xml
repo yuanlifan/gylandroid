@@ -6,7 +6,20 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!--<item name="android:windowActionBarOverlay">@null</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--<item name="android:actionBarItemBackground">@null</item>-->
+        <!--<item name="windowActionBarOverlay">@null</item>-->
+        <!--<item name="actionBarItemBackground">@null</item>-->
+        <!--<item name="android:textColorPrimary">@color/white</item>-->
+        <!--<item name="android:windowBackground">@color/white</item>-->
+        <!--<item name="popupMenuStyle">@style/PopupMenuStyle</item>-->
+        <!--<item name="android:popupMenuStyle">@style/PopupMenuStyle</item>-->
     </style>
+
+    <style name="PopupMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu"></style>
+
 
     <style name="CustomDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
