@@ -1,6 +1,11 @@
 package com.example.admin.gyl.personcenter;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -19,6 +24,7 @@ public class AttestActivity extends BaseActivity {
     private ArrayList<BaseFragment> fragments       = new ArrayList<>();
     private BaseFragment mAttestFirstFragment;
     private BaseFragment mAttestSecondFragment;
+    public int currentPosition1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +92,25 @@ public class AttestActivity extends BaseActivity {
             if (fragment != null) {
                 transaction.hide(fragment);
             }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //获取图片路径
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
+            Uri selectedImage = data.getData();
+            String[] filePathColumns = {MediaStore.Images.Media.DATA};
+            Cursor c = getContentResolver().query(selectedImage, filePathColumns, null, null, null);
+            c.moveToFirst();
+            int columnIndex = c.getColumnIndex(filePathColumns[0]);
+            String imagePath = c.getString(columnIndex);
+//            showImage(imagePath);
+            if(getFragment(1) != null) {
+                ((AttestSecondFragment) getFragment(1)).showImage(imagePath, currentPosition1);
+            }
+            c.close();
         }
     }
 

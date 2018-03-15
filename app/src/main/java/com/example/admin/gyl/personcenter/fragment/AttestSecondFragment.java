@@ -83,6 +83,12 @@ public class AttestSecondFragment extends BaseFragment {
         }
     }
 
+    public void showImage(String imagePath, int currentPosition1) {
+        //显示图片
+        photosListData.set(currentPosition1, imagePath);
+        mAttestPictureAdapter.notifyDataSetChanged();
+    }
+
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_attest_second;

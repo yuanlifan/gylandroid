@@ -1,9 +1,11 @@
 package com.example.admin.gyl.personcenter.adapter;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
@@ -45,7 +47,7 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
         TextView tv_delete_picture = helper.getView(R.id.tv_delete_picture);
         LinearLayout ll_bottom = helper.getView(R.id.ll_bottom);
         FrameLayout fl_image = helper.getView(R.id.fl_image);
-
+        final int pos = helper.getPosition();
         if(TextUtils.isEmpty(item)) {
             ll_bottom.setVisibility(View.INVISIBLE);
             tv_desc.setVisibility(View.VISIBLE);
@@ -53,7 +55,7 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
                 @Override
                 public void onClick(View view) {
                     //todo 从下往上 弹出对话框：《相册 拍摄 文件夹》
-                    showDialog();
+                    showDialog(pos);
                 }
             });
             Drawable drawableColor = new ColorDrawable(ContextCompat.getColor(mContext, R.color.common_color2));
@@ -71,7 +73,7 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
             Glide.with(mContext).load(item).into(imageView);
         }
 
-        switch (helper.getPosition()) {
+        switch (pos) {
             case 0:
                 tv_desc.setText("点击上传《营业执照》");
                 break;
@@ -87,7 +89,7 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
         }
     }
 
-    private void showDialog() {
+    private void showDialog(final int pos) {
         final Dialog dialog = new Dialog(mContext, R.style.dialog_style2);
         Window window = dialog.getWindow();
         WindowManager.LayoutParams attributes = window.getAttributes();
@@ -95,9 +97,40 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
         attributes.gravity = Gravity.BOTTOM;
         window.setAttributes(attributes);
         dialog.setContentView(R.layout.view_dialog_picture_bottom);
+        LinearLayout llBottom1 = dialog.findViewById(R.id.ll_bottom_1);
+        LinearLayout llBottom2 = dialog.findViewById(R.id.ll_bottom_2);
+        LinearLayout llBottom3 = dialog.findViewById(R.id.ll_bottom_3);
+        llBottom1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //todo 相册
+                //调用相册
+                Intent intent1 = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                ((AttestActivity) mContext).currentPosition1 = pos;
+                ((AttestActivity) mContext).startActivityForResult(intent1,1);
+            }
+        });
+        llBottom2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //todo 拍摄
+                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 启动系统相机
+                ((AttestActivity) mContext).currentPosition1 = pos;
+                ((AttestActivity) mContext).startActivityForResult(intent2,2);
+            }
+        });
+        llBottom3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         dialog.setCanceledOnTouchOutside(true);//点击对话框以外的部分，进行销毁
         dialog.show();
     }
+
 
     private void showPopuWindow(String item) {
         LayoutInflater inflater = ((AttestActivity) mContext).getLayoutInflater();
