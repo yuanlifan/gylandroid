@@ -62,11 +62,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AnimActivityTheme"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-        <activity android:name="com.example.admin.gyl.personcenter.CompanyPhotoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AnimActivityTheme"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
-            />
+
     </application>
 
 </manifest>

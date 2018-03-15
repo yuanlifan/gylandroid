@@ -62,7 +62,7 @@ public class RegistActivity extends BaseActivity {
     }
 
     @Override
-    public void findViews() {
+    public void initView() {
         topTitleTV = (TextView) findViewById(R.id.common_topbar_title);
         topLeftLayout = (LinearLayout) findViewById(R.id.common_topbar_left_layout);
         topLeftLayout.setOnClickListener(this);

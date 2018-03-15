@@ -6,7 +6,7 @@
 
     <color name="defult_text_color">#868686</color>
     <color name="common_color">#d9a74e</color>
-    <color name="common_color2">#ecc37a</color>
+    <color name="common_color2">#f4bf62</color>
     <color name="defult_bg_color">#f6f7f9</color>
     <color name="edittext_hint_color">#cccccc</color>
 
@@ -22,5 +22,6 @@
     <color name="gray_trans">#44000000</color>
     <color name="skyblue">#E1FFFF</color>
     <color name="golden1">#fbf7ee</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

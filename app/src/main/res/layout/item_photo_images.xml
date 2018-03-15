@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/common_measure_240dp"
+    android:layout_marginTop="@dimen/common_measure_12dp"
+    android:orientation="vertical">
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1">-->
+
+        <FrameLayout
+            android:id="@+id/fl_image"
+            android:layout_width="@dimen/common_measure_160dp"
+            android:layout_height="@dimen/common_measure_200dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@color/common_color2" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:lineSpacingExtra="@dimen/common_measure_6dp"
+                android:padding="@dimen/common_measure_8dp"
+                android:text="点击上传《营业执照》"
+                android:textColor="@color/black2"
+                android:textSize="12sp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_marginTop="@dimen/common_measure_10dp"
+            android:layout_width="@dimen/common_measure_160dp"
+            android:layout_height="@dimen/common_measure_200dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_look_picture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/common_measure_2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_look_normal"
+                android:gravity="center"
+                android:padding="@dimen/common_measure_5dp"
+                android:text="查看大图"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_delete_picture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_measure_2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_delete_normal"
+                android:gravity="center"
+                android:padding="@dimen/common_measure_5dp"
+                android:text="删除"
+                android:textColor="@color/common_color"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1">-->
+
+        <!--<FrameLayout-->
+            <!--android:layout_width="@dimen/common_measure_160dp"-->
+            <!--android:layout_height="@dimen/common_measure_200dp"-->
+            <!--android:layout_gravity="center">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:src="@color/common_color2" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:lineSpacingExtra="@dimen/common_measure_6dp"-->
+                <!--android:padding="@dimen/common_measure_8dp"-->
+                <!--android:text="点击上传公司法人的身份证（正面）"-->
+                <!--android:textColor="@color/black2"-->
+                <!--android:textSize="12sp" />-->
+
+        <!--</FrameLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_marginTop="@dimen/common_measure_10dp"-->
+            <!--android:layout_width="@dimen/common_measure_160dp"-->
+            <!--android:layout_height="@dimen/common_measure_200dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="@dimen/common_measure_2dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/btn_look_normal"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="@dimen/common_measure_5dp"-->
+                <!--android:text="查看大图"-->
+                <!--android:textSize="10sp" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/common_measure_2dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/btn_delete_normal"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="@dimen/common_measure_5dp"-->
+                <!--android:text="删除"-->
+                <!--android:textColor="@color/common_color"-->
+                <!--android:textSize="10sp" />-->
+
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+<!--</LinearLayout>-->

@@ -45,7 +45,7 @@ public class MainFragmentActivity extends BaseActivity {
     }
 
     @Override
-    public void findViews() {
+    public void initView() {
         viewPager = (NoScrollViewPager)findViewById(R.id.main_activity_viewpager);
         navBarView = (NavigationBarView)findViewById(R.id.main_navigation_bar);
         viewPager.setOffscreenPageLimit(1);//首页的2个fragment数据都保留

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="2dp"></corners>
+    <solid android:color="#fff"></solid>
+    <stroke
+        android:width="1dp"
+        android:color="#f5c164" />
+    <!-- 虚线的高度 -->
+    <!-- <size android:height="1dp" /> 这句可以注释掉-->
+</shape>

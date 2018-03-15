@@ -64,6 +64,16 @@ public class UserFragment extends BaseFragment {
         return rootView;
     }
 
+    @Override
+    protected void initData(View view) {
+
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return 0;
+    }
+
     private void findViews(View view, LayoutInflater inflater) {
         zhzlLayout = view.findViewById(R.id.user_fragment_zhzl_layout);
         zhzlLayout.setOnClickListener(this);

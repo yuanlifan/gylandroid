@@ -44,12 +44,12 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
-        findViews();
+        initView();
         handler.sendEmptyMessageDelayed(GOTO_MAINACTIVITY,2000L);
     }
 
     @Override
-    public void findViews() {
+    public void initView() {
         // 方法1 Android获得屏幕的宽和高
         WindowManager windowManager = getWindowManager();
         Display display = windowManager.getDefaultDisplay();

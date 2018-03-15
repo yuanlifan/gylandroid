@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">供应链金融</string>
+    <string name="base_company">企业基本资料包括 《营业执照（正本）》、公司法人的身份证（正/反面）和《银行开户许可证》。请在以下指定位置完成材料的上传，并在完成后点击“提交审核”按钮</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

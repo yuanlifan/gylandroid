@@ -36,7 +36,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     @Override
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
-        findViews();
+        initView();
     }
 
     @Override
@@ -63,6 +63,6 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
         }
     }
 
-    public abstract void findViews();
+    public abstract void initView();
     public abstract void onViewClick(View v);
 }

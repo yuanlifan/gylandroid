@@ -53,6 +53,16 @@ public class FirstpageFragment extends BaseFragment implements OnBannerListener 
         return rootView;
     }
 
+    @Override
+    protected void initData(View view) {
+
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return 0;
+    }
+
     private void findViews(View view, LayoutInflater inflater) {
         mBanner = (Banner) view.findViewById(R.id.first_page_fragment_banner);
         mBanner.setOnBannerListener(this);

@@ -48,7 +48,7 @@ public class UploadTestActivity extends BaseActivity {
     }
 
     @Override
-    public void findViews() {
+    public void initView() {
         btn = (Button) findViewById(R.id.upload_test_activity_btn);
         btn.setOnClickListener(this);
         imageView = (ImageView) findViewById(R.id.upload_test_activity_img);
