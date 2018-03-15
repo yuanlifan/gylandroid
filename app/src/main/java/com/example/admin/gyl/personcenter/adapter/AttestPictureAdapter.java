@@ -109,6 +109,7 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 ((AttestActivity) mContext).currentPosition1 = pos;
                 ((AttestActivity) mContext).startActivityForResult(intent1,1);
+                dialog.dismiss();
             }
         });
         llBottom2.setOnClickListener(new View.OnClickListener() {
@@ -118,12 +119,13 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
                 Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 启动系统相机
                 ((AttestActivity) mContext).currentPosition1 = pos;
                 ((AttestActivity) mContext).startActivityForResult(intent2,2);
+                dialog.dismiss();
             }
         });
         llBottom3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                dialog.dismiss();
             }
         });
 

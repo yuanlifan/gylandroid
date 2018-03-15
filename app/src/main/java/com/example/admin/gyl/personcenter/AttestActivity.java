@@ -24,7 +24,7 @@ public class AttestActivity extends BaseActivity {
     private ArrayList<BaseFragment> fragments       = new ArrayList<>();
     private BaseFragment mAttestFirstFragment;
     private BaseFragment mAttestSecondFragment;
-    public int currentPosition1;
+    public int currentPosition1 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,10 +108,18 @@ public class AttestActivity extends BaseActivity {
             String imagePath = c.getString(columnIndex);
 //            showImage(imagePath);
             if(getFragment(1) != null) {
-                ((AttestSecondFragment) getFragment(1)).showImage(imagePath, currentPosition1);
+                ((AttestSecondFragment) fragments.get(1)).showImage(imagePath, currentPosition1);
             }
             c.close();
+        }else if(requestCode == 2 && resultCode == Activity.RESULT_OK && data != null) {
+            if (data.getData() != null || data.getExtras() != null) { // 防止没有返回结果
+                Uri uri = data.getData();
+            if(getFragment(1) != null) {
+                ((AttestSecondFragment) fragments.get(1)).showImage(String.valueOf(uri), currentPosition1);
+            }
         }
+
     }
 
+}
 }

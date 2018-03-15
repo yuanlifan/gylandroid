@@ -85,8 +85,12 @@ public class AttestSecondFragment extends BaseFragment {
 
     public void showImage(String imagePath, int currentPosition1) {
         //显示图片
-        photosListData.set(currentPosition1, imagePath);
-        mAttestPictureAdapter.notifyDataSetChanged();
+        if(photosListData.size() > currentPosition1) {
+            photosListData.set(currentPosition1 - 1, imagePath);
+            mAttestPictureAdapter.notifyDataSetChanged();
+        }
+//        mAttestPictureAdapter.setData(currentPosition1,imagePath);
+//        mAttestPictureAdapter.notifyDataSetChanged();
     }
 
     @Override
