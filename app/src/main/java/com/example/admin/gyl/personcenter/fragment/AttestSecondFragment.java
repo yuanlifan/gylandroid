@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.example.admin.gyl.base.BaseFragment;
 import com.example.admin.gyl.personcenter.AttestActivity;
 import com.example.admin.gyl.personcenter.adapter.AttestPictureAdapter;
+import com.example.admin.gyl.utils.Util;
 import com.ylfcf.gyl.R;
 
 import java.util.ArrayList;
@@ -78,14 +80,20 @@ public class AttestSecondFragment extends BaseFragment {
 
             case R.id.btn_push:
                 //TODO 提交申请
-
+                for(String s: photosListData) {
+                    if(TextUtils.isEmpty(s)) {
+                        Util.toastShort(mContext, "请完善企业资料");
+                        return;
+                    }
+                }
+                ((AttestActivity) mContext).postFormbody(photosListData);
                 break;
         }
     }
 
     public void showImage(String imagePath, int currentPosition1) {
         //显示图片
-        if(photosListData.size() > currentPosition1) {
+        if(photosListData.size() >= currentPosition1) {
             photosListData.set(currentPosition1 - 1, imagePath);
             mAttestPictureAdapter.notifyDataSetChanged();
         }

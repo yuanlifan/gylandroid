@@ -35,8 +35,11 @@ import java.util.List;
 
 public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
+    private List<String> mData;
+
     public AttestPictureAdapter(int layoutResId, @Nullable List<String> data) {
         super(layoutResId, data);
+        this.mData = data;
     }
 
     @Override
@@ -71,19 +74,35 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
                 }
             });
             Glide.with(mContext).load(item).into(imageView);
+            tv_look_picture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showPopuWindow(item);
+                }
+            });
+            tv_delete_picture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //todo 删除图片
+//                    mData.set(pos,"");
+//                    AttestPictureAdapter.this.notifyDataSetChanged();
+                    AttestPictureAdapter.this.setData(pos-1, "");
+                }
+            });
+
         }
 
         switch (pos) {
-            case 0:
+            case 1:
                 tv_desc.setText("点击上传《营业执照》");
                 break;
-            case 1:
+            case 2:
                 tv_desc.setText("点击上传公司法人的身份证（正面）");
                 break;
-            case 2:
+            case 3:
                 tv_desc.setText("点击上传公司法人的身份证（反面）");
                 break;
-            case 3:
+            case 4:
                 tv_desc.setText("点击上传公司的银行开户许可证");
                 break;
         }
@@ -125,6 +144,7 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
         llBottom3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //todo 跳转文件夹
                 dialog.dismiss();
             }
         });
@@ -142,20 +162,29 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
         //得到要弹出的界面视图
         View view = inflater2.inflate(R.layout.picture_big, null);
         ImageView imageView = view.findViewById(R.id.image_big);
+        ImageView iv_close = view.findViewById(R.id.iv_close);
         Glide.with(mContext).load(item).into(imageView);
         WindowManager windowManager = ((AttestActivity) mContext).getWindowManager();
         int width = windowManager.getDefaultDisplay().getWidth();
         int heigth = windowManager.getDefaultDisplay().getHeight();
         Log.i("width", width+"");
         Log.i("height", heigth+"");
-        PopupWindow popupWindow = new PopupWindow(view,(int)(width*0.8),(int)(heigth*0.5));
+//        PopupWindow popupWindow = new PopupWindow(view,(int)(width*0.8),(int)(heigth*0.5));
+        final PopupWindow popupWindow = new PopupWindow(view,(int)(width*0.7),(int)(heigth*0.7));
+        iv_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+            }
+        });
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         //显示在屏幕中央
         popupWindow.showAtLocation(currean_View, Gravity.CENTER, 0, 40);
         //popupWindow弹出后屏幕半透明
-        BackgroudAlpha((float)0.5);
+//        BackgroudAlpha((float)0.5);
+        BackgroudAlpha((float)0.4);
         //弹出窗口关闭事件
         popupWindow.setOnDismissListener(new popupwindowdismisslistener());
     }

@@ -3,20 +3,34 @@ package com.example.admin.gyl.personcenter;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Base64;
 import android.view.View;
 
 import com.example.admin.gyl.base.BaseActivity;
 import com.example.admin.gyl.base.BaseFragment;
+import com.example.admin.gyl.http.MyCallBack;
+import com.example.admin.gyl.http.model.BaseModel;
 import com.example.admin.gyl.personcenter.fragment.AttestFirstFragment;
 import com.example.admin.gyl.personcenter.fragment.AttestSecondFragment;
+import com.example.admin.gyl.utils.SettingManager;
+import com.example.admin.gyl.utils.Util;
 import com.ylfcf.gyl.R;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.Call;
 
 public class AttestActivity extends BaseActivity {
 
@@ -122,4 +136,72 @@ public class AttestActivity extends BaseActivity {
     }
 
 }
+
+    private  String co_name;//企业名称
+    private  String legal_person;//企业法人
+    private  String yyzz_code;//营业执照号
+    private  String khxk_code;//开户许可证号
+    private  String bank_name;//收款银行
+    private  String bank_card;//收款银行账号
+    private  String jgxy_code;//机构信用代码证号
+
+    public void setFormbody(String co_name, String legal_person, String yyzz_code,
+                            String khxk_code, String bank_name, String bank_card, String jgxy_code) {
+        this.co_name = co_name;
+        this.legal_person = legal_person;
+        this.yyzz_code = yyzz_code;
+        this.khxk_code = khxk_code;
+        this.bank_name = bank_name;
+        this.bank_card = bank_card;
+        this.jgxy_code = jgxy_code;
+    }
+
+    public void postFormbody(List<String> photosListData) {
+        if(mLoadingDialog != null){
+            mLoadingDialog.show();
+        }
+        String userId = SettingManager.getUserId(AttestActivity.this);
+        netHandler.postFormbody(userId, co_name, legal_person, yyzz_code,
+                jgxy_code, khxk_code, bank_name, bank_card, Bitmap2StrByBase64(photosListData.get(0)),
+                Bitmap2StrByBase64(photosListData.get(1)), Bitmap2StrByBase64(photosListData.get(2)),
+                Bitmap2StrByBase64(photosListData.get(3)), new MyCallBack<BaseModel>() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        mLoadingDialog.dismiss();
+                        Util.toastLong(AttestActivity.this, "资料上传失败！");
+                    }
+
+                    @Override
+                    public void onSuccess(Call call, BaseModel data) {
+//                        System.out.println("yyyy");
+                        mLoadingDialog.dismiss();
+                        if(data != null){
+                            int resultCode = SettingManager.getResultCode(data);
+//                    UserModel userInfo = baseInfo.getmUserModel();
+                            if(resultCode == 0){
+                                Util.toastLong(AttestActivity.this, "资料上传成功！");
+                                AttestActivity.this.finish();
+                            }
+                        }
+                    }
+                });
+    }
+
+    /**
+     * 通过Base32将Bitmap转换成Base64字符串
+     */
+    public String Bitmap2StrByBase64(String data){
+        String datas = "hahaha";
+        Bitmap bit = null;
+        try {
+            bit = BitmapFactory.decodeStream(new FileInputStream(datas));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ByteArrayOutputStream bos=new ByteArrayOutputStream();
+        bit.compress(Bitmap.CompressFormat.JPEG, 40, bos);//第二个入参表示图片压缩率，如果是100就表示不压缩
+        byte[] bytes=bos.toByteArray();
+        return Base64.encodeToString(bytes, Base64.DEFAULT);
+    }
+
 }

@@ -111,9 +111,9 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onSuccess(Call call, LoginModel baseInfo) {
-                if(mLoadingDialog != null && mLoadingDialog.isShowing()){
+//                if(mLoadingDialog != null && mLoadingDialog.isShowing()){
                     mLoadingDialog.dismiss();
-                }
+//                }
                 if(baseInfo != null){
                     int resultCode = SettingManager.getResultCode(baseInfo);
 //                    UserModel userInfo = baseInfo.getmUserModel();

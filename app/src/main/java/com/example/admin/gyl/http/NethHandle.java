@@ -31,10 +31,25 @@ public class NethHandle {
                 .post(UrlConfig.getBaseUrl() + "/co_user/info/login", callBack);
     }
 
-    //注册
+    //请求注册
     public void RequestRegist(String mobile, String password, String coName, MyCallBack<BaseModel> callBack) {
         HttpManager.getHttpManager().addParam("mobile", mobile).addParam("password", password)
                 .addParam("co_name", coName).post(UrlConfig.getBaseUrl() + "/co_user/info/register", callBack);
+    }
+
+    //提交企业注册信息  jgxy_code可选
+    public void postFormbody(String id, String co_name, String legal_person, String yyzz_code, String jgxy_code,
+                             String khxk_code, String bank_name, String bank_card, String yyzz_img,
+                             String idcard_img_front, String idcard_img_back, String khxk_img,
+                             MyCallBack<BaseModel> callBack) {
+
+        HttpManager.getHttpManager().addParam("id", id).addParam("co_name", co_name)
+                .addParam("legal_person",legal_person).addParam("yyzz_code", yyzz_code)
+                .addParam("jgxy_code", jgxy_code).addParam("khxk_code", khxk_code)
+                .addParam("bank_name", bank_name).addParam("bank_card", bank_card)
+                .addParam("yyzz_img", yyzz_img).addParam("idcard_img_front", idcard_img_front)
+                .addParam("idcard_img_back", idcard_img_back).addParam("khxk_img", khxk_img)
+                .post(UrlConfig.getBaseUrl() + "/co_user/info/updateCompUser", callBack);
     }
 
     public void removeAllMessage() {

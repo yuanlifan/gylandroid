@@ -25,6 +25,7 @@ public class AttestFirstFragment extends BaseFragment {
     private EditText mEt_company_number2;
     private EditText mEt_bank_name;
     private EditText mEt_company_number3;
+    private EditText mEt_company_number4;
 
     @Override
     protected void initData(View view) {
@@ -38,6 +39,7 @@ public class AttestFirstFragment extends BaseFragment {
         mEt_company_number2 = view.findViewById(R.id.et_company_number2);
         mEt_bank_name = view.findViewById(R.id.et_bank_name);
         mEt_company_number3 = view.findViewById(R.id.et_company_number3);
+        mEt_company_number4 = view.findViewById(R.id.et_company_number4);
 
         TextView btn_next = view.findViewById(R.id.btn_next);
         btn_next.setOnClickListener(this);
@@ -58,6 +60,11 @@ public class AttestFirstFragment extends BaseFragment {
                 //TODO 下一步
                 boolean isNotEmpty = checkOutText();
                 if(isNotEmpty) {
+                    ((AttestActivity) mContext).setFormbody(mEt_company_id.getText().toString(), mEt_company_name.getText().toString(),
+                            mEt_company_number1.getText().toString(), mEt_company_number2.getText().toString(),
+                            mEt_bank_name.getText().toString(),mEt_company_number3.getText().toString(),
+                            mEt_company_number4.getText().toString()
+                    );
                     ((AttestActivity) mContext).changeFragment(1);
                 }
                 break;
