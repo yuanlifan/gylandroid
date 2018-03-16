@@ -173,11 +173,9 @@ public class AttestActivity extends BaseActivity {
 
                     @Override
                     public void onSuccess(Call call, BaseModel data) {
-//                        System.out.println("yyyy");
                         mLoadingDialog.dismiss();
                         if(data != null){
                             int resultCode = SettingManager.getResultCode(data);
-//                    UserModel userInfo = baseInfo.getmUserModel();
                             if(resultCode == 0){
                                 Util.toastLong(AttestActivity.this, "资料上传成功！");
                                 AttestActivity.this.finish();
@@ -191,17 +189,17 @@ public class AttestActivity extends BaseActivity {
      * 通过Base32将Bitmap转换成Base64字符串
      */
     public String Bitmap2StrByBase64(String data){
-        String datas = "hahaha";
         Bitmap bit = null;
         try {
-            bit = BitmapFactory.decodeStream(new FileInputStream(datas));
+            bit = BitmapFactory.decodeStream(new FileInputStream(data));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         ByteArrayOutputStream bos=new ByteArrayOutputStream();
         bit.compress(Bitmap.CompressFormat.JPEG, 40, bos);//第二个入参表示图片压缩率，如果是100就表示不压缩
         byte[] bytes=bos.toByteArray();
-        return Base64.encodeToString(bytes, Base64.DEFAULT);
+        String s = Base64.encodeToString(bytes, Base64.DEFAULT);
+        return s;
     }
 
 }
