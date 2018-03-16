@@ -164,7 +164,8 @@ public class AttestActivity extends BaseActivity {
         netHandler.postFormbody(userId, co_name, legal_person, yyzz_code,
                 jgxy_code, khxk_code, bank_name, bank_card, Bitmap2StrByBase64(photosListData.get(0)),
                 Bitmap2StrByBase64(photosListData.get(1)), Bitmap2StrByBase64(photosListData.get(2)),
-                Bitmap2StrByBase64(photosListData.get(3)), new MyCallBack<BaseModel>() {
+                Bitmap2StrByBase64(photosListData.get(3)), getFileName(photosListData.get(0)), getFileName(photosListData.get(1)),
+                getFileName(photosListData.get(2)), getFileName(photosListData.get(3)), new MyCallBack<BaseModel>() {
                     @Override
                     public void onFailure(Call call, IOException e) {
                         mLoadingDialog.dismiss();
@@ -183,6 +184,18 @@ public class AttestActivity extends BaseActivity {
                         }
                     }
                 });
+    }
+
+    public String getFileName(String pathandname){
+
+        int start=pathandname.lastIndexOf("/");
+        int end=pathandname.lastIndexOf(".");
+        if(start!=-1 && end!=-1){
+            return pathandname.substring(start+1,end);
+        }else{
+            return null;
+        }
+
     }
 
     /**

@@ -41,6 +41,8 @@ public class NethHandle {
     public void postFormbody(String id, String co_name, String legal_person, String yyzz_code, String jgxy_code,
                              String khxk_code, String bank_name, String bank_card, String yyzz_img,
                              String idcard_img_front, String idcard_img_back, String khxk_img,
+                             String yyzz_img_file, String idcard_img_front_file,
+                             String idcard_img_back_file, String khxk_img_file,
                              MyCallBack<BaseModel> callBack) {
 
         HttpManager.getHttpManager().addParam("id", id).addParam("co_name", co_name)
@@ -49,6 +51,8 @@ public class NethHandle {
                 .addParam("bank_name", bank_name).addParam("bank_card", bank_card)
                 .addParam("yyzz_img", yyzz_img).addParam("idcard_img_front", idcard_img_front)
                 .addParam("idcard_img_back", idcard_img_back).addParam("khxk_img", khxk_img)
+                .addParam("yyzz_img_file", yyzz_img_file).addParam("idcard_img_front_file", idcard_img_front_file)
+                .addParam("idcard_img_back_file", idcard_img_back_file).addParam("khxk_img_file", khxk_img_file)
                 .post(UrlConfig.getBaseUrl() + "/co_user/info/updateCompUser", callBack);
     }
 
