@@ -11,9 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.admin.gyl.base.BaseFragment;
+import com.example.admin.gyl.personcenter.LoanBeforeActivity;
+import com.example.admin.gyl.personcenter.NewLoanActivity;
 import com.example.admin.gyl.personcenter.SettingActivity;
+import com.example.admin.gyl.utils.SettingManager;
 import com.ylfcf.gyl.R;
 
 /**
@@ -37,6 +41,7 @@ public class UserFragment extends BaseFragment {
     private LinearLayout yjqdjkLayout;//已结清的借款
 
     private ImageView dqglArrow,dhglArrow;
+    private TextView  mTv_username;
 
     public static Fragment newInstance(int position) {
         UserFragment f = new UserFragment();
@@ -94,8 +99,18 @@ public class UserFragment extends BaseFragment {
         yjqdjkLayout = view.findViewById(R.id.user_fragment_yjqdjk_layout);
         yjqdjkLayout.setOnClickListener(this);
 
+        mTv_username = view.findViewById(R.id.user_fragment_username_tv);
+
         dqglArrow = view.findViewById(R.id.user_fragment_dqgl_arrow);
         dhglArrow = view.findViewById(R.id.user_fragment_dhgl_arrow);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(mTv_username != null) {
+            mTv_username.setText("欢迎!" + SettingManager.getUserName(mContext));
+        }
     }
 
     @Override
@@ -120,10 +135,12 @@ public class UserFragment extends BaseFragment {
                 }
                 break;
             case R.id.user_fragment_jkgl_layout:
-                //借款管理
+                //todo 借款管理
+                startActivity(new Intent(mContext, LoanBeforeActivity.class));
                 break;
             case R.id.user_fragment_xjjksq_layout:
-                //新建借款申请
+                //todo 新建借款申请
+                startActivity(new Intent(mContext, NewLoanActivity.class));
                 break;
             case R.id.user_fragment_dhgl_layout:
                 //贷后管理
@@ -142,6 +159,7 @@ public class UserFragment extends BaseFragment {
                 //已结清的借款
                 break;
         }
+
     }
 
     private void rotateStart(ImageView img){

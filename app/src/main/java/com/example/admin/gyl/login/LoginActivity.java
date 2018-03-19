@@ -120,6 +120,7 @@ public class LoginActivity extends BaseActivity {
                     if(resultCode == 0){
                         Util.toastLong(LoginActivity.this,"登录成功");
                         SettingManager.setUserId(LoginActivity.this,baseInfo.getMsg().getId());
+                        SettingManager.setUserName(LoginActivity.this,baseInfo.getMsg().getCo_name());
                         Intent intent = new Intent();
                         setResult(MainFragmentActivity.RESULTCODE_LOGIN,intent);
                         finish();

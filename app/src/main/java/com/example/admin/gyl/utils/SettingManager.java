@@ -11,7 +11,7 @@ import com.example.admin.gyl.http.model.LoginModel;
 
 public class SettingManager extends DefaultPreferences {
     public static final String USER_ID 	= "userid";
-
+    public static final String USER_NAME = "username";
     /**
      *
      * @param context
@@ -82,4 +82,14 @@ public class SettingManager extends DefaultPreferences {
         }
         return resultMsg;
     }
+
+    public static void setUserName(Context context, String userId){
+        DefaultPreferences.setString(context,USER_NAME, userId);
+    }
+
+    public static String getUserName(Context context){
+        String userName = DefaultPreferences.getString(context,USER_NAME, "");
+        return userName;
+    }
+
 }

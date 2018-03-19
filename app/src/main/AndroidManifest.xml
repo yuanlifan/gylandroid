@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permisssion.CAMERA"/>
+    <uses-permission android:name="android.permisssion.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -63,6 +63,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AnimActivityTheme"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name="com.example.admin.gyl.personcenter.LoanBeforeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AnimActivityTheme" />
+        <activity
+            android:name="com.example.admin.gyl.personcenter.NewLoanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AnimActivityTheme" />
 
     </application>
 
