@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.admin.gyl.personcenter.LoanBeforeActivity">
+    android:background="@color/defult_bg_color">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/common_topbar"/>
+
+
+</LinearLayout>
