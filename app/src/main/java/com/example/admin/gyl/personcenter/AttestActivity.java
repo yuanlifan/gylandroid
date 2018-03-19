@@ -191,7 +191,7 @@ public class AttestActivity extends BaseActivity {
         int start=pathandname.lastIndexOf("/");
         int end=pathandname.lastIndexOf(".");
         if(start!=-1 && end!=-1){
-            return pathandname.substring(start+1,end);
+            return pathandname.substring(start+1,end) + ".jpg";
         }else{
             return null;
         }
@@ -211,7 +211,7 @@ public class AttestActivity extends BaseActivity {
         ByteArrayOutputStream bos=new ByteArrayOutputStream();
         bit.compress(Bitmap.CompressFormat.JPEG, 40, bos);//第二个入参表示图片压缩率，如果是100就表示不压缩
         byte[] bytes=bos.toByteArray();
-        String s = Base64.encodeToString(bytes, Base64.DEFAULT);
+        String s = Base64.encodeToString(bytes, Base64.NO_WRAP);
         return s;
     }
 
