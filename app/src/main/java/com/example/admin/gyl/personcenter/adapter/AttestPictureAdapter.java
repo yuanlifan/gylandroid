@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -29,7 +27,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.admin.gyl.personcenter.AttestActivity;
 import com.ylfcf.gyl.R;
 
-import java.io.File;
 import java.util.List;
 
 /**
@@ -39,12 +36,10 @@ import java.util.List;
 public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
     private List<String> mData;
-    private String picPath;
 
     public AttestPictureAdapter(int layoutResId, @Nullable List<String> data) {
         super(layoutResId, data);
         this.mData = data;
-        picPath = Environment.getExternalStorageDirectory().getPath() + "/" + "temp.png";
     }
 
     @Override
@@ -141,9 +136,9 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
             public void onClick(View view) {
                 //todo 拍摄
                 Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 启动系统相机
-                Uri uri = Uri.fromFile(new File(picPath));
-                //为拍摄的图片指定一个存储的路径
-                intent2.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+//                Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().getPath() + "/" + "temp"+pos+".png"));
+//                //为拍摄的图片指定一个存储的路径
+//                intent2.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 ((AttestActivity) mContext).currentPosition1 = pos;
                 ((AttestActivity) mContext).startActivityForResult(intent2,2);
                 dialog.dismiss();
@@ -153,6 +148,11 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
             @Override
             public void onClick(View view) {
                 //todo 跳转文件夹
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                ((AttestActivity) mContext).currentPosition1 = pos;
+                ((AttestActivity) mContext).startActivityForResult(intent,3);
                 dialog.dismiss();
             }
         });
