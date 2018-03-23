@@ -19,7 +19,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Base64;
 import android.view.View;
 
-import com.example.admin.gyl.base.BaseActivity;
+import com.example.admin.gyl.Permission.BasePermissionActivity;
 import com.example.admin.gyl.base.BaseFragment;
 import com.example.admin.gyl.http.MyCallBack;
 import com.example.admin.gyl.http.model.BaseModel;
@@ -41,7 +41,7 @@ import java.util.UUID;
 
 import okhttp3.Call;
 
-public class AttestActivity extends BaseActivity {
+public class AttestActivity extends BasePermissionActivity {
 
     private int                     currentPosition = 0;
     private ArrayList<BaseFragment> fragments       = new ArrayList<>();
@@ -119,7 +119,7 @@ public class AttestActivity extends BaseActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //获取图片路径
         if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {

@@ -128,15 +128,15 @@ public class NavigationBarView extends LinearLayout implements View.OnClickListe
                 break;
             case R.id.nav_two:
                 boolean isLogin = SettingManager.isLogin(context);
-                if(isLogin){
+//                if(isLogin){
                     two.setProgress(1);
                     currentID = 1 ;
                     mViewPager.setCurrentItem(1, false);
-                }else{
-                    if(mNaviBtnOnClickListener != null){
-                        mNaviBtnOnClickListener.back(two);
-                    }
-                }
+//                }else{
+//                    if(mNaviBtnOnClickListener != null){
+//                        mNaviBtnOnClickListener.back(two);
+//                    }
+//                }
                 break;
         }
     }

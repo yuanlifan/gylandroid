@@ -1,5 +1,6 @@
 package com.example.admin.gyl.personcenter.adapter;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
@@ -24,7 +25,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.admin.gyl.Permission.PermissionCallBackM;
 import com.example.admin.gyl.personcenter.AttestActivity;
+import com.example.admin.gyl.utils.Util;
 import com.ylfcf.gyl.R;
 
 import java.util.List;
@@ -123,37 +126,67 @@ public class AttestPictureAdapter extends BaseQuickAdapter<String, BaseViewHolde
             @Override
             public void onClick(View view) {
                 //todo 相册
-                //调用相册
-                Intent intent1 = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                ((AttestActivity) mContext).currentPosition1 = pos;
-                ((AttestActivity) mContext).startActivityForResult(intent1,1);
-                dialog.dismiss();
+                ((AttestActivity) mContext).requestPermission(123, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        "本次操作需要系统存储权限，否则无法正常进行。", new PermissionCallBackM() {
+                            @Override
+                            public void onPermissionGrantedM(int requestCode, String... perms) {
+                                Intent intent1 = new Intent(Intent.ACTION_PICK,
+                                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                ((AttestActivity) mContext).currentPosition1 = pos;
+                                ((AttestActivity) mContext).startActivityForResult(intent1,1);
+                                dialog.dismiss();
+                            }
+                            @Override
+                            public void onPermissionDeniedM(int requestCode, String... perms) {
+                                Util.toastLong(mContext, "用户拒绝了存储权限。");
+                            }
+                        });
             }
         });
         llBottom2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //todo 拍摄
-                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 启动系统相机
+                ((AttestActivity) mContext).requestPermission(123, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        "本次操作需要系统存储权限，否则无法正常进行。", new PermissionCallBackM() {
+                            @Override
+                            public void onPermissionGrantedM(int requestCode, String... perms) {
+                                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// 启动系统相机
 //                Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().getPath() + "/" + "temp"+pos+".png"));
 //                //为拍摄的图片指定一个存储的路径
 //                intent2.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-                ((AttestActivity) mContext).currentPosition1 = pos;
-                ((AttestActivity) mContext).startActivityForResult(intent2,2);
-                dialog.dismiss();
+                                ((AttestActivity) mContext).currentPosition1 = pos;
+                                ((AttestActivity) mContext).startActivityForResult(intent2,2);
+                                dialog.dismiss();
+                            }
+                            @Override
+                            public void onPermissionDeniedM(int requestCode, String... perms) {
+                                Util.toastLong(mContext, "用户拒绝了存储权限。");
+                            }
+                        });
+
             }
         });
         llBottom3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //todo 跳转文件夹
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                ((AttestActivity) mContext).currentPosition1 = pos;
-                ((AttestActivity) mContext).startActivityForResult(intent,3);
-                dialog.dismiss();
+                ((AttestActivity) mContext).requestPermission(123, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        "本次操作需要系统存储权限，否则无法正常进行。", new PermissionCallBackM() {
+                            @Override
+                            public void onPermissionGrantedM(int requestCode, String... perms) {
+                                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                                intent.setType("image/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
+                                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                                ((AttestActivity) mContext).currentPosition1 = pos;
+                                ((AttestActivity) mContext).startActivityForResult(intent,3);
+                                dialog.dismiss();
+                            }
+                            @Override
+                            public void onPermissionDeniedM(int requestCode, String... perms) {
+                                Util.toastLong(mContext, "用户拒绝了存储权限。");
+                            }
+                        });
             }
         });
 
